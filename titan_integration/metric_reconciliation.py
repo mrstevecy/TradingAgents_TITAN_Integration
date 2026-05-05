@@ -374,7 +374,18 @@ def _reference_price(stage1: dict[str, Any]) -> float:
             )
             if evidence_price is not None:
                 return evidence_price
-    return float(stage1["price_data_audit"]["latest_bar"]["close"])
+    latest_bar = stage1.get("price_data_audit", {}).get("latest_bar")
+    if isinstance(latest_bar, dict) and latest_bar.get("close") is not None:
+        return float(latest_bar["close"])
+    latest_price = (
+        stage1.get("mandatory_equity_data_scan", {})
+        .get("items", {})
+        .get("market.latest_price", {})
+        .get("value", {})
+    )
+    if isinstance(latest_price, dict) and latest_price.get("close") is not None:
+        return float(latest_price["close"])
+    raise KeyError("No reference price found in Stage 1 packet.")
 
 
 def _source_eps(stage2b: dict[str, Any], source_id: str) -> float | None:

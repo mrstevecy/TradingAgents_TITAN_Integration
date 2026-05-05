@@ -1231,6 +1231,29 @@ def _first_metric(stage2c: dict[str, Any]) -> dict[str, Any]:
     return metrics[0] if metrics else {}
 
 
+def _bar_from_typed_market_evidence(stage1: dict[str, Any]) -> dict[str, Any]:
+    value = (
+        stage1.get("mandatory_equity_data_scan", {})
+        .get("items", {})
+        .get("market.latest_price", {})
+        .get("value", {})
+    )
+    if not isinstance(value, dict):
+        return {}
+    close = _as_float(value.get("close"))
+    if close is None:
+        return {}
+    return {
+        "date": value.get("date"),
+        "open": value.get("open"),
+        "high": value.get("high"),
+        "low": value.get("low"),
+        "close": close,
+        "volume": value.get("volume"),
+        "source": "mandatory_equity_data_scan.market.latest_price",
+    }
+
+
 def _company_name(ticker: str, baseline: dict[str, Any]) -> str:
     for key in ("company", "company_name", "full_name"):
         value = baseline.get(key)
@@ -1317,7 +1340,7 @@ def build_preview_html(
     logo_html = _logo_html(ticker)
     cycle = stage4.get("research_cycle") or stage1.get("research_cycle") or {}
     price = stage1.get("price_data_audit", {})
-    bar = price.get("latest_bar", {})
+    bar = price.get("latest_bar", {}) or _bar_from_typed_market_evidence(stage1)
     metrics = price.get("computed_metrics", {})
     metric = _first_metric(stage2c)
     reported = metric.get("reported_values", {})
@@ -1814,7 +1837,7 @@ def write_preview(
         report_mode=ReportMode.PRE_TRADE,
     )
     price = stage1.get("price_data_audit", {})
-    bar = price.get("latest_bar", {}) or {}
+    bar = price.get("latest_bar", {}) or _bar_from_typed_market_evidence(stage1)
     metrics = price.get("computed_metrics", {}) or {}
     manifest_context = _build_report_context(
         ticker=ticker,

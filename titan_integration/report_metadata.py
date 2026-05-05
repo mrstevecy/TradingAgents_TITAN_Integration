@@ -64,6 +64,11 @@ TECHNICAL_METADATA_RE = re.compile(
     r"\b(?:sma|ema|rsi|macd|vwap|atr|bollinger|bb_|vwma|adx)\b|\$\d+(?:\.\d+)?",
     re.I,
 )
+NON_ISSUER_TITLE_RE = re.compile(
+    r"\b(?:trend analysis|technical analysis|market analysis|fundamental analysis|sentiment|"
+    r"multi[-\s]?timeframe|price snapshot|appendix|stage\s*\d+|research packet)\b",
+    re.I,
+)
 
 SCRATCHPAD_PHRASES = (
     "now i have all the data",
@@ -103,14 +108,14 @@ def build_report_dates(
 
 def sanitize_issuer_display_name(candidate: str | None, fallback_ticker: str) -> str:
     value = " ".join(str(candidate or "").split())
-    if not value or TECHNICAL_METADATA_RE.search(value):
+    if not value or TECHNICAL_METADATA_RE.search(value) or NON_ISSUER_TITLE_RE.search(value):
         return fallback_ticker.upper()
     return value
 
 
 def assert_clean_issuer_display_name(value: str) -> None:
-    if TECHNICAL_METADATA_RE.search(value):
-        raise ValueError(f"Issuer display name contains technical metadata: {value}")
+    if TECHNICAL_METADATA_RE.search(value) or NON_ISSUER_TITLE_RE.search(value):
+        raise ValueError(f"Issuer display name contains non-issuer metadata: {value}")
 
 
 def strip_agent_scratchpad(text: str | None) -> str:
