@@ -1,0 +1,229 @@
+{
+  "ticker": "NVDA",
+  "trade_date": "2026-05-01",
+  "manifest_created_utc": "2026-05-02T09:05:00Z",
+  "sources": [
+    {
+      "source_id": "nvidia_fy2026_results",
+      "title": "NVIDIA Announces Financial Results for Fourth Quarter and Fiscal 2026",
+      "publisher": "NVIDIA Investor Relations",
+      "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Fourth-Quarter-and-Fiscal-2026/",
+      "published_date": "2026-02-25",
+      "retrieved_at_utc": "2026-05-02T09:05:00Z",
+      "reliability_tier": "primary_company",
+      "source_type": "company_ir",
+      "evidence_summary": "NVIDIA reported fiscal 2026 revenue of $215.9B, up 65% year over year, and published GAAP income statement data for fiscal 2026. This supports historical revenue and profitability context but does not independently validate forward P/E or PEG claims.",
+      "supported_claims": [
+        "historical fundamentals",
+        "revenue growth",
+        "profitability context"
+      ],
+      "limitations": [
+        "Does not provide third-party forward estimates.",
+        "Does not validate PEG or forward P/E calculations by itself."
+      ]
+    },
+    {
+      "source_id": "nvidia_q1_fy2027_call",
+      "title": "NVIDIA Sets Conference Call for First-Quarter Financial Results",
+      "publisher": "NVIDIA Investor Relations",
+      "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Sets-Conference-Call-for-First-Quarter-Financial-Results/default.aspx",
+      "published_date": "2026-04-29",
+      "retrieved_at_utc": "2026-05-02T09:05:00Z",
+      "reliability_tier": "primary_company",
+      "source_type": "company_ir",
+      "evidence_summary": "NVIDIA stated it will host its first-quarter fiscal 2027 financial-results conference call on Wednesday, May 20, 2026, after results are announced.",
+      "supported_claims": [
+        "next earnings timing"
+      ],
+      "limitations": []
+    },
+    {
+      "source_id": "dow_classified_ai_agreements",
+      "title": "Classified Networks AI Agreements",
+      "publisher": "U.S. Department of War",
+      "url": "https://www.war.gov/News/Releases/Release/Article/4475177/classified-networks-ai-agreements/",
+      "published_date": "2026-05-01",
+      "retrieved_at_utc": "2026-05-02T09:05:00Z",
+      "reliability_tier": "official_government",
+      "source_type": "government_release",
+      "evidence_summary": "The official release states that SpaceX, OpenAI, Google, NVIDIA, Reflection, Microsoft, AWS, and Oracle entered agreements to deploy advanced AI capabilities on classified networks for lawful operational use.",
+      "supported_claims": [
+        "Pentagon AI contract claim",
+        "classified network AI agreements"
+      ],
+      "limitations": [
+        "Does not quantify NVIDIA-specific revenue, margin, or contract value."
+      ]
+    },
+    {
+      "source_id": "ap_best_month_since_2020",
+      "title": "US stocks rally to the finish of their best month since 2020, even as oil prices whipsaw",
+      "publisher": "Associated Press",
+      "url": "https://apnews.com/article/42120b305ce6298712931e79b66a20de",
+      "published_date": "2026-04-30",
+      "retrieved_at_utc": "2026-05-02T09:05:00Z",
+      "reliability_tier": "reputable_news",
+      "source_type": "market_news",
+      "evidence_summary": "AP reported that the S&P 500 rallied to close out its best month in more than five years, with the Nasdaq also reaching a record, while oil prices were volatile amid the war with Iran.",
+      "supported_claims": [
+        "market momentum",
+        "macro risk backdrop",
+        "oil/geopolitical context"
+      ],
+      "limitations": [
+        "Does not validate all geopolitical details in the TradingAgents text."
+      ]
+    },
+    {
+      "source_id": "axios_fed_hold",
+      "title": "Fed holds rates steady amid the most dissents in decades",
+      "publisher": "Axios",
+      "url": "https://www.axios.com/2026/04/29/fed-powell-interest-rates",
+      "published_date": "2026-04-29",
+      "retrieved_at_utc": "2026-05-02T09:05:00Z",
+      "reliability_tier": "reputable_news",
+      "source_type": "macro_news",
+      "evidence_summary": "Axios reported that the Federal Reserve left its target rate range unchanged at 3.5% to 3.75% and highlighted unusually high internal dissent.",
+      "supported_claims": [
+        "Fed policy",
+        "macro context"
+      ],
+      "limitations": [
+        "Secondary source; official FOMC statement should be added in a later provider pass."
+      ]
+    },
+    {
+      "source_id": "marketbeat_nvda_q1_2027",
+      "title": "NVIDIA Q1 2027 Earnings Report",
+      "publisher": "MarketBeat",
+      "url": "https://www.marketbeat.com/earnings/reports/2026-5-20-nvidia-co-stock/",
+      "published_date": null,
+      "retrieved_at_utc": "2026-05-02T09:05:00Z",
+      "reliability_tier": "secondary_market_data",
+      "source_type": "earnings_estimates",
+      "evidence_summary": "MarketBeat lists NVDA Q1 2027 consensus EPS of $1.76, expected revenue of $78.42B, and conference-call timing on May 20, 2026.",
+      "supported_claims": [
+        "forward estimate context",
+        "earnings timing"
+      ],
+      "limitations": [
+        "Secondary estimates source.",
+        "Does not validate the TradingAgents forward P/E or PEG figures directly."
+      ]
+    },
+    {
+      "source_id": "motley_micron_april",
+      "title": "Why Shares of Micron Technology Shot Up 53% Last Month",
+      "publisher": "The Motley Fool",
+      "url": "https://www.fool.com/investing/2026/05/01/why-shares-of-micron-technology-shot-up-53-last-mo/",
+      "published_date": "2026-05-01",
+      "retrieved_at_utc": "2026-05-02T09:05:00Z",
+      "reliability_tier": "secondary_news_analysis",
+      "source_type": "sector_proxy",
+      "evidence_summary": "The article states that Micron shares rose 53% in April and frames memory-chip demand as tied to the AI growth supercycle.",
+      "supported_claims": [
+        "Micron proxy claim",
+        "AI memory demand"
+      ],
+      "limitations": [
+        "Sector proxy only; does not directly validate NVIDIA revenue or margins."
+      ]
+    },
+    {
+      "source_id": "vertiv_q1_2026_eps",
+      "title": "Vertiv Q1 FY2026: AI Infrastructure Demand Drives 83% EPS Surge",
+      "publisher": "Kalkine",
+      "url": "https://www.kalkine.com/news/general-news/vertiv-q1-fy2026-ai-infrastructure-demand-drives-83-eps-surge",
+      "published_date": "2026-04-23",
+      "retrieved_at_utc": "2026-05-02T09:05:00Z",
+      "reliability_tier": "secondary_news_analysis",
+      "source_type": "sector_proxy",
+      "evidence_summary": "The article reports Vertiv adjusted EPS growth of 83% year over year and links pipeline/backlog strength to AI data center deployments.",
+      "supported_claims": [
+        "Vertiv proxy claim",
+        "AI infrastructure demand"
+      ],
+      "limitations": [
+        "Sector proxy only; should be supplemented with Vertiv primary filings or release."
+      ]
+    }
+  ],
+  "claim_links": [
+    {
+      "match_contains": [
+        "pentagon ai contract"
+      ],
+      "stage2_status": "Supported",
+      "evidence_class": "direct_official_source",
+      "source_ids": [
+        "dow_classified_ai_agreements"
+      ],
+      "rationale": "The official government release directly names NVIDIA among companies entering classified-network AI agreements. Financial impact remains unquantified.",
+      "unresolved_requirements": [
+        "Quantify NVIDIA-specific revenue, duration, and margin impact before using this as a valuation input."
+      ]
+    },
+    {
+      "match_contains": [
+        "forward valuation"
+      ],
+      "stage2_status": "Conditional",
+      "evidence_class": "partial_secondary_estimates",
+      "source_ids": [
+        "nvidia_fy2026_results",
+        "marketbeat_nvda_q1_2027"
+      ],
+      "rationale": "Historical fiscal results and one secondary estimates source support the existence of forward estimate context, but they do not directly validate the forward P/E or PEG values stated by TradingAgents.",
+      "unresolved_requirements": [
+        "Add a verified estimates provider or compute forward valuation from explicitly sourced price, shares, EPS, and growth assumptions."
+      ]
+    },
+    {
+      "match_contains": [
+        "ecosystem proxy"
+      ],
+      "stage2_status": "Conditional",
+      "evidence_class": "indirect_sector_proxy",
+      "source_ids": [
+        "motley_micron_april",
+        "vertiv_q1_2026_eps"
+      ],
+      "rationale": "Sources support AI memory and data-center infrastructure strength, but these are indirect proxies and cannot by themselves validate NVIDIA-specific demand or earnings.",
+      "unresolved_requirements": [
+        "Add primary Micron and Vertiv filings/releases or transcript excerpts.",
+        "Map proxy relevance explicitly to NVIDIA revenue segments."
+      ]
+    },
+    {
+      "match_contains": [
+        "macro/geopolitical"
+      ],
+      "stage2_status": "Conditional",
+      "evidence_class": "partial_macro_context",
+      "source_ids": [
+        "ap_best_month_since_2020",
+        "axios_fed_hold"
+      ],
+      "rationale": "Sources support broad market strength, oil/geopolitical volatility, and Fed hold/division. They do not validate every geopolitical assertion in the TradingAgents text.",
+      "unresolved_requirements": [
+        "Add official FOMC statement.",
+        "Add government or energy-market source for oil reserve and geopolitical claims."
+      ]
+    },
+    {
+      "match_contains": [
+        "next earnings timing"
+      ],
+      "stage2_status": "Supported",
+      "evidence_class": "direct_company_source",
+      "source_ids": [
+        "nvidia_q1_fy2027_call",
+        "marketbeat_nvda_q1_2027"
+      ],
+      "rationale": "NVIDIA IR directly confirms the May 20, 2026 first-quarter fiscal 2027 call; MarketBeat independently aligns with the same date.",
+      "unresolved_requirements": []
+    }
+  ]
+}
+

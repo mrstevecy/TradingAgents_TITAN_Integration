@@ -1,0 +1,53 @@
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+TradingAgents/.env
+TradingAgents/.env.*
+
+# Upstream project clone; publish this wrapper as a separate repo and reference
+# TradingAgents externally instead of bundling the nested clone.
+TradingAgents/
+
+# Local-only data and generated research artifacts
+data/**
+inputs/**
+!inputs/README.md
+corpus/**
+output/**
+outputs/**
+research_materials/**
+research_cycles/**
+graphify-out/**
+**/graphify-out/**
+assets/**
+.tmp*
+.tmp*/
+
+# Provider outputs, caches, logs, and intermediate packets
+provider_cache/**
+normalized_data/**
+research_packets/**
+logs/**
+cache/**
+embeddings/**
+test-results/**
+playwright-report/**
+htmlcov/**
+.coverage
+*.sqlite
+*.sqlite3
+*.db
+
+# Python/runtime noise
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

@@ -1,0 +1,93 @@
+{
+  "added_sources": [
+    {
+      "source_id": "stockanalysis_mu_forecast",
+      "title": "Micron Technology (MU) Stock Forecast and Price Target 2026",
+      "publisher": "StockAnalysis",
+      "url": "https://stockanalysis.com/stocks/mu/forecast/",
+      "published_date": "2026-04-15",
+      "retrieved_at_utc": "2026-05-03T09:45:00Z",
+      "reliability_tier": "secondary_market_data",
+      "source_type": "analyst_forecast",
+      "evidence_summary": "StockAnalysis forecast page provides analyst forecast context that can be used as secondary support for estimate and valuation framing.",
+      "supported_claims": ["Forward valuation claim", "Analyst forecast context"],
+      "limitations": ["Secondary source; not official company guidance."]
+    },
+    {
+      "source_id": "marketbeat_mu_forecast",
+      "title": "Micron Technology (MU) Stock Forecast & Price Target",
+      "publisher": "MarketBeat",
+      "url": "https://www.marketbeat.com/stocks/NASDAQ/MU/forecast/",
+      "published_date": "2026-05-03",
+      "retrieved_at_utc": "2026-05-03T09:45:00Z",
+      "reliability_tier": "secondary_market_data",
+      "source_type": "analyst_forecast",
+      "evidence_summary": "MarketBeat forecast page provides analyst recommendation and price-target context for Micron.",
+      "supported_claims": ["Sentiment/analyst context", "Forward valuation claim"],
+      "limitations": ["Analyst aggregator; does not replace direct company or regulatory evidence."]
+    },
+    {
+      "source_id": "micron_sec_q2_fy2026_8k",
+      "title": "Micron FY2026 Q2 Earnings Release Exhibit",
+      "publisher": "SEC EDGAR",
+      "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000004/a2026q2ex991-pressrelease.htm",
+      "published_date": "2026-03-18",
+      "retrieved_at_utc": "2026-05-03T09:45:00Z",
+      "reliability_tier": "official_regulatory",
+      "source_type": "sec_exhibit",
+      "evidence_summary": "SEC-hosted exhibit provides regulatory-backed access to Micron's fiscal Q2 2026 earnings release and fiscal Q3 2026 outlook table: revenue of $33.5 billion plus or minus $750 million, gross margin of approximately 81%, GAAP diluted EPS of $18.90 plus or minus $0.40, and non-GAAP diluted EPS of $19.15 plus or minus $0.40.",
+      "supported_claims": ["Official issuer earnings context", "Fundamental backdrop", "Earnings release context", "Latest company guidance", "Q3 FY2026 revenue guidance", "Q3 FY2026 gross margin guidance", "Q3 FY2026 EPS guidance"],
+      "limitations": ["Official filing exhibit; still requires analytical interpretation for valuation and horizon classification."]
+    }
+  ],
+  "reinforcement_tasks": [
+    {
+      "task_id": "mu_q3_guidance_reinforcement",
+      "target_claim_contains": ["Latest company guidance", "Q3 FY2026 guidance", "company guidance"],
+      "original_stage2_status": "Supported",
+      "missing_evidence": ["SEC-hosted exhibit cross-check for Q3 FY2026 guidance table"],
+      "retrieval_actions": ["Add SEC-hosted Micron Q2 FY2026 earnings-release exhibit", "Carry explicit Q3 revenue, gross margin, GAAP EPS, and non-GAAP EPS guidance into downstream report logic"],
+      "added_source_ids": ["micron_q2_fy2026_results", "micron_q2_fy2026_prepared_remarks", "micron_sec_q2_fy2026_8k"],
+      "reinforced_status": "Supported",
+      "evidence_class": "primary_company_and_regulatory_guidance",
+      "rationale": "The latest company guidance is a primary evidence block and must override baseline claims that say no forward guidance was available or that treat pre-guidance consensus as the operative fact set.",
+      "residual_gaps": ["Future reruns should automate extraction of issuer outlook tables rather than relying on curated manifest summaries."]
+    },
+    {
+      "task_id": "mu_forward_valuation_reconciliation",
+      "target_claim_contains": ["Forward valuation claim"],
+      "original_stage2_status": "Conditional",
+      "missing_evidence": ["Exact EPS input behind any baseline forward P/E point estimate", "Independent valuation range cross-check"],
+      "retrieval_actions": ["Add secondary statistics/forecast sources", "Run Stage 2C direct computable metric reconciliation"],
+      "added_source_ids": ["stockanalysis_mu_statistics", "marketbeat_mu_earnings", "stockanalysis_mu_forecast", "marketbeat_mu_forecast"],
+      "reinforced_status": "Usable Range - Assumption-Based",
+      "evidence_class": "computable_metric_reconciliation",
+      "rationale": "Valuation is not forced into a single point estimate. It is carried forward as a computable, assumption-based range until the exact forward EPS input is independently tied to source evidence.",
+      "residual_gaps": ["Exact forward EPS input behind any specific TradingAgents point estimate remains source-dependent."]
+    },
+    {
+      "task_id": "mu_direct_issuer_earnings_reinforcement",
+      "target_claim_contains": ["Ecosystem proxy claims", "earnings"],
+      "original_stage2_status": "Conditional",
+      "missing_evidence": ["Direct issuer evidence separating Micron facts from sector proxy evidence"],
+      "retrieval_actions": ["Add Micron investor relations and SEC exhibit sources"],
+      "added_source_ids": ["micron_q2_fy2026_results", "micron_q2_fy2026_prepared_remarks", "micron_sec_q2_fy2026_8k"],
+      "reinforced_status": "Supported",
+      "evidence_class": "primary_company_and_regulatory",
+      "rationale": "Micron issuer and SEC evidence strengthens earnings/fundamental context. Sector news remains proxy context and is not over-promoted into direct issuer validation.",
+      "residual_gaps": ["Long-term moat and cycle-normalized valuation still require a dedicated horizon evidence packet."]
+    },
+    {
+      "task_id": "mu_macro_sector_context_reinforcement",
+      "target_claim_contains": ["Macro/geopolitical claims"],
+      "original_stage2_status": "Supported",
+      "missing_evidence": [],
+      "retrieval_actions": ["Add official macro policy source and high-authority market source"],
+      "added_source_ids": ["ap_market_april_best_since_2020", "fomc_april_2026_statement"],
+      "reinforced_status": "Supported",
+      "evidence_class": "macro_context",
+      "rationale": "Macro context remains supported, but it is treated as market backdrop rather than direct issuer validation.",
+      "residual_gaps": []
+    }
+  ]
+}

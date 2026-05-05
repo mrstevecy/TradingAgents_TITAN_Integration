@@ -1,0 +1,187 @@
+{
+  "sources": [
+    {
+      "source_id": "micron_q2_fy2026_results",
+      "title": "Micron Technology, Inc. Reports Results for the Second Quarter of Fiscal 2026",
+      "publisher": "Micron Technology Investor Relations",
+      "url": "https://investors.micron.com/node/50256/pdf",
+      "published_date": "2026-03-18",
+      "retrieved_at_utc": "2026-05-03T09:40:00Z",
+      "reliability_tier": "primary_company",
+      "source_type": "earnings_release",
+      "evidence_summary": "Micron reported fiscal Q2 2026 records across revenue, gross margin, EPS, and free cash flow, with strong demand and tight supply conditions. The same issuer release includes fiscal Q3 2026 guidance: revenue of $33.5 billion plus or minus $750 million, gross margin of approximately 81%, GAAP diluted EPS of $18.90 plus or minus $0.40, and non-GAAP diluted EPS of $19.15 plus or minus $0.40.",
+      "supported_claims": ["Official issuer earnings context", "Fundamental backdrop", "AI memory demand context", "Latest company guidance", "Q3 FY2026 revenue guidance", "Q3 FY2026 gross margin guidance", "Q3 FY2026 EPS guidance"],
+      "limitations": ["Company source; useful for reported facts and guidance, not independent valuation judgment."]
+    },
+    {
+      "source_id": "micron_q2_fy2026_prepared_remarks",
+      "title": "Fiscal Q2 2026 Earnings Call Prepared Remarks",
+      "publisher": "Micron Technology Investor Relations",
+      "url": "https://investors.micron.com/static-files/e089f8c0-065d-47b8-9d02-bfa863cdb357",
+      "published_date": "2026-03-18",
+      "retrieved_at_utc": "2026-05-03T09:40:00Z",
+      "reliability_tier": "primary_company",
+      "source_type": "management_commentary",
+      "evidence_summary": "Prepared remarks provide management context on fiscal Q2 records, demand environment, operating margin, non-GAAP EPS, AI memory/HBM demand, and management's fiscal Q3 outlook context.",
+      "supported_claims": ["Earnings release context", "AI memory/HBM narrative", "Fundamental backdrop", "Management guidance context"],
+      "limitations": ["Management commentary must be cross-checked against filings and independent market evidence."]
+    },
+    {
+      "source_id": "stockanalysis_mu_statistics",
+      "title": "Micron Technology (MU) Statistics & Valuation",
+      "publisher": "StockAnalysis",
+      "url": "https://stockanalysis.com/stocks/mu/statistics/",
+      "published_date": "2026-04-15",
+      "retrieved_at_utc": "2026-05-03T09:40:00Z",
+      "reliability_tier": "secondary_market_data",
+      "source_type": "valuation_statistics",
+      "evidence_summary": "StockAnalysis lists Micron trailing PE near 21.91, forward P/E near 5.17, beta near 1.61, and EPS near $21.26 in its statistics page.",
+      "supported_claims": ["Forward valuation claim", "Beta/volatility context", "Trailing valuation context"],
+      "limitations": ["Secondary data source; values should be timestamped and reconciled against exact report price and EPS estimates."]
+    },
+    {
+      "source_id": "marketbeat_mu_earnings",
+      "title": "Micron Technology (MU) Earnings Date and Reports 2026",
+      "publisher": "MarketBeat",
+      "url": "https://www.marketbeat.com/stocks/NASDAQ/MU/earnings/",
+      "published_date": "2026-04-12",
+      "retrieved_at_utc": "2026-05-03T09:40:00Z",
+      "reliability_tier": "secondary_market_data",
+      "source_type": "earnings_estimates",
+      "evidence_summary": "MarketBeat lists Micron earnings, estimate, and catalyst context, including an estimated next earnings date of June 24, 2026. Use this as a secondary cross-check for earnings date and analyst estimates, not as a replacement for issuer Q3 guidance.",
+      "supported_claims": ["Forward valuation claim", "Earnings estimate context", "Earnings revisions context", "Catalyst calendar context", "Confirmed catalyst calendar and next earnings date"],
+      "limitations": ["Secondary analyst-estimate aggregator; not official company guidance."]
+    },
+    {
+      "source_id": "marketbeat_mu_short_interest",
+      "title": "Micron Technology (MU) Short Interest & Short Float",
+      "publisher": "MarketBeat",
+      "url": "https://www.marketbeat.com/stocks/NASDAQ/MU/short-interest/",
+      "published_date": "2026-05-01",
+      "retrieved_at_utc": "2026-05-03T09:40:00Z",
+      "reliability_tier": "secondary_market_data",
+      "source_type": "short_interest",
+      "evidence_summary": "MarketBeat short-interest coverage reports April 2026 short interest of 36,327,421 shares, about 3.2% of shares outstanding, with a short-interest ratio near 0.8 days. Use as a secondary positioning cross-check unless replaced by direct FINRA or exchange data.",
+      "supported_claims": ["Sentiment and positioning data", "Short interest and days-to-cover context"],
+      "limitations": ["Secondary short-interest coverage; direct FINRA/equivalent source remains preferred for production-grade validation."]
+    },
+    {
+      "source_id": "motley_mu_april_rally",
+      "title": "Why Shares of Micron Technology Shot Up 53% Last Month",
+      "publisher": "The Motley Fool",
+      "url": "https://www.fool.com/investing/2026/05/01/why-shares-of-micron-technology-shot-up-53-last-mo/",
+      "published_date": "2026-05-01",
+      "retrieved_at_utc": "2026-05-03T09:40:00Z",
+      "reliability_tier": "secondary_news_analysis",
+      "source_type": "news_catalyst",
+      "evidence_summary": "Article discusses Micron's April 2026 rally and AI memory/HBM-driven market narrative.",
+      "supported_claims": ["News/catalyst context", "Recent momentum context", "AI memory demand narrative"],
+      "limitations": ["News analysis; use as narrative/catalyst support, not primary financial statement evidence."]
+    },
+    {
+      "source_id": "ap_market_april_best_since_2020",
+      "title": "U.S. stocks capped their best month since 2020 in April 2026",
+      "publisher": "Associated Press",
+      "url": "https://apnews.com/",
+      "published_date": "2026-05-01",
+      "retrieved_at_utc": "2026-05-03T09:40:00Z",
+      "reliability_tier": "high_authority_news",
+      "source_type": "macro_market_context",
+      "evidence_summary": "AP market coverage supports the broader April 2026 market-strength context.",
+      "supported_claims": ["Macro/geopolitical claims", "Market backdrop"],
+      "limitations": ["General market context; not issuer-specific."]
+    },
+    {
+      "source_id": "fomc_april_2026_statement",
+      "title": "Federal Reserve FOMC Statement - April 2026",
+      "publisher": "Federal Reserve",
+      "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+      "published_date": "2026-04-29",
+      "retrieved_at_utc": "2026-05-03T09:40:00Z",
+      "reliability_tier": "official_government",
+      "source_type": "macro_policy",
+      "evidence_summary": "Official FOMC calendar/statement source for late-April policy context and rate-path interpretation.",
+      "supported_claims": ["Macro/geopolitical claims", "Economic releases and policy context"],
+      "limitations": ["Macro source; not issuer-specific."]
+    },
+    {
+      "source_id": "tomshardware_memory_shortage_2027",
+      "title": "Samsung and SK hynix warn AI-driven memory shortages could last until 2027 and beyond",
+      "publisher": "Tom's Hardware",
+      "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/samsung-and-sk-hynix-warn-ai-driven-memory-shortages-could-last-until-2027-and-beyond-as-hbm-demand-explodes-customers-already-reserving-supply-years-ahead-while-the-wider-dram-market-begins-to-tighten",
+      "published_date": "2026-05-01",
+      "retrieved_at_utc": "2026-05-03T09:40:00Z",
+      "reliability_tier": "industry_news",
+      "source_type": "sector_context",
+      "evidence_summary": "Industry reporting supports tight DRAM/HBM supply and AI-driven memory demand context involving major memory suppliers including Micron.",
+      "supported_claims": ["Ecosystem proxy claims", "Sector demand context", "AI memory/HBM narrative"],
+      "limitations": ["Industry news; use as sector context, not direct Micron revenue validation."]
+    }
+  ],
+  "claim_links": [
+    {
+      "match_contains": ["Latest company guidance", "Q3 FY2026 guidance", "company guidance"],
+      "stage2_status": "Supported",
+      "evidence_class": "primary_company_guidance",
+      "rationale": "Micron issuer and SEC-hosted earnings-release evidence includes explicit fiscal Q3 2026 outlook values. This guidance must be used before any margin, valuation, catalyst, or final-decision synthesis.",
+      "source_ids": ["micron_q2_fy2026_results", "micron_q2_fy2026_prepared_remarks"],
+      "unresolved_requirements": ["Cross-check exact guidance table against SEC-hosted exhibit in Stage 2B."]
+    },
+    {
+      "match_contains": ["Confirmed catalyst calendar", "next earnings date", "catalyst calendar"],
+      "stage2_status": "Supported",
+      "evidence_class": "secondary_catalyst_calendar",
+      "rationale": "A reputable secondary earnings-date source provides a date-specific next-earnings estimate. Treat it as catalyst-calendar evidence with issuer-confirmation caveats.",
+      "source_ids": ["marketbeat_mu_earnings"],
+      "unresolved_requirements": ["Prefer issuer IR confirmation when available; preserve estimated-date caveat if the issuer has not confirmed."]
+    },
+    {
+      "match_contains": ["Sentiment and positioning data", "short interest", "days-to-cover", "days to cover"],
+      "stage2_status": "Supported",
+      "evidence_class": "secondary_positioning_data",
+      "rationale": "Secondary short-interest evidence provides numeric shares-short, short-percent, and short-interest-ratio context. Do not infer crowding from tone alone.",
+      "source_ids": ["marketbeat_mu_short_interest"],
+      "unresolved_requirements": ["Prefer direct FINRA/equivalent short-interest data when available."]
+    },
+    {
+      "match_contains": ["TradingAgents final stance"],
+      "stage2_status": "Conditional",
+      "evidence_class": "agent_output_requires_validation",
+      "rationale": "The baseline stance is preserved as model output but must be validated through price, fundamental, citation, graph, and horizon checks.",
+      "source_ids": ["stage1_tradingagents_summary"],
+      "unresolved_requirements": ["Final stance requires downstream Titan horizon validation."]
+    },
+    {
+      "match_contains": ["Forward valuation claim"],
+      "stage2_status": "Conditional",
+      "evidence_class": "computable_metric_requires_reconciliation",
+      "rationale": "Forward valuation can be strengthened by direct calculation from report price and externally sourced EPS/forward multiple inputs.",
+      "source_ids": ["stockanalysis_mu_statistics", "marketbeat_mu_earnings"],
+      "unresolved_requirements": ["Run Stage 2C metric reconciliation before final valuation language."]
+    },
+    {
+      "match_contains": ["Ecosystem proxy claims"],
+      "stage2_status": "Conditional",
+      "evidence_class": "proxy_sector_context",
+      "rationale": "AI memory/HBM sector evidence supports sector context but must not be treated as direct issuer revenue validation.",
+      "source_ids": ["micron_q2_fy2026_results", "micron_q2_fy2026_prepared_remarks", "tomshardware_memory_shortage_2027"],
+      "unresolved_requirements": ["Separate direct Micron evidence from sector proxy evidence in final reporting."]
+    },
+    {
+      "match_contains": ["Macro/geopolitical claims"],
+      "stage2_status": "Supported",
+      "evidence_class": "macro_context",
+      "rationale": "Broad market and policy context are supported by high-authority macro/news sources.",
+      "source_ids": ["ap_market_april_best_since_2020", "fomc_april_2026_statement"],
+      "unresolved_requirements": []
+    },
+    {
+      "match_contains": ["Official SEC evidence"],
+      "stage2_status": "Supported",
+      "evidence_class": "official_regulatory",
+      "rationale": "Stage 1 SEC EDGAR evidence provides official regulatory support for core issuer facts.",
+      "source_ids": ["stage1_sec_edgar"],
+      "unresolved_requirements": []
+    }
+  ]
+}

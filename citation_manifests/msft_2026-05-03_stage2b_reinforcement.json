@@ -1,0 +1,119 @@
+{
+  "added_sources": [
+    {
+      "source_id": "microsoft_fy26_q3_10q",
+      "title": "Microsoft Form 10-Q for Quarter Ended March 31, 2026",
+      "publisher": "SEC EDGAR",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526191507/msft-20260331.htm",
+      "published_date": "2026-04-29",
+      "retrieved_at_utc": "2026-05-03T15:10:00Z",
+      "reliability_tier": "official_regulatory",
+      "source_type": "sec_filing",
+      "evidence_summary": "SEC-hosted 10-Q provides official financial statement support for Microsoft's quarter ended March 31, 2026.",
+      "supported_claims": ["Official SEC evidence", "Official regulatory evidence", "Fundamental backdrop", "Core financial statement facts"],
+      "limitations": ["Historical filing evidence; forward guidance requires earnings-call or issuer guidance support."]
+    },
+    {
+      "source_id": "motley_msft_q3_fy2026_transcript",
+      "title": "Microsoft (MSFT) Q3 2026 Earnings Transcript",
+      "publisher": "The Motley Fool",
+      "url": "https://www.fool.com/earnings/call-transcripts/2026/04/29/microsoft-msft-q3-2026-earnings-transcript/",
+      "published_date": "2026-04-29",
+      "retrieved_at_utc": "2026-05-03T15:10:00Z",
+      "reliability_tier": "secondary_transcript",
+      "source_type": "earnings_transcript",
+      "evidence_summary": "Transcript coverage includes management guidance context for Q4 FY2026 costs, operating expenses, and fiscal 2026 operating-margin direction.",
+      "supported_claims": ["Latest company guidance", "Management guidance context", "Q4 FY2026 guidance context", "Operating margin guidance context"],
+      "limitations": ["Secondary transcript; prefer issuer-hosted transcript if available."]
+    },
+    {
+      "source_id": "marketbeat_msft_q3_2026_report",
+      "title": "Microsoft Q3 2026 Earnings Report",
+      "publisher": "MarketBeat",
+      "url": "https://www.marketbeat.com/earnings/reports/2026-4-29-microsoft-co-stock/",
+      "published_date": "2026-04-29",
+      "retrieved_at_utc": "2026-05-03T15:10:00Z",
+      "reliability_tier": "secondary_market_data",
+      "source_type": "earnings_estimates",
+      "evidence_summary": "Secondary report summarizes Q4 FY2026 revenue guidance near $86.7 billion to $87.8 billion and AI-capex context.",
+      "supported_claims": ["Latest company guidance", "Forward valuation claim", "Q4 FY2026 revenue guidance context", "AI capex context"],
+      "limitations": ["Secondary aggregator; does not replace issuer guidance or SEC filing evidence."]
+    },
+    {
+      "source_id": "stockanalysis_msft_forecast",
+      "title": "Microsoft (MSFT) Stock Forecast and Analyst Price Targets",
+      "publisher": "StockAnalysis",
+      "url": "https://stockanalysis.com/stocks/msft/forecast/",
+      "published_date": "2026-04-30",
+      "retrieved_at_utc": "2026-05-03T15:10:00Z",
+      "reliability_tier": "secondary_market_data",
+      "source_type": "analyst_forecast",
+      "evidence_summary": "StockAnalysis provides analyst forecast context including Strong Buy consensus and average target near $565.75.",
+      "supported_claims": ["Forward valuation claim", "Analyst forecast context", "Sentiment and positioning data", "Analyst consensus context"],
+      "limitations": ["Secondary source; reconcile against other providers before final valuation language."]
+    },
+    {
+      "source_id": "marketbeat_msft_forecast",
+      "title": "Microsoft (MSFT) Stock Forecast and Price Target",
+      "publisher": "MarketBeat",
+      "url": "https://www.marketbeat.com/stocks/NASDAQ/MSFT/forecast/",
+      "published_date": "2026-05-03",
+      "retrieved_at_utc": "2026-05-03T15:10:00Z",
+      "reliability_tier": "secondary_market_data",
+      "source_type": "analyst_forecast",
+      "evidence_summary": "MarketBeat provides analyst consensus context including Moderate Buy consensus and average target near $556.15.",
+      "supported_claims": ["Forward valuation claim", "Analyst forecast context", "Sentiment and positioning data", "Analyst consensus context"],
+      "limitations": ["Secondary source; does not replace direct analyst notes."]
+    }
+  ],
+  "reinforcement_tasks": [
+    {
+      "task_id": "msft_guidance_reinforcement",
+      "target_claim_contains": ["Latest company guidance", "company guidance"],
+      "original_stage2_status": "Supported",
+      "missing_evidence": ["Issuer transcript or official guidance-table extraction"],
+      "retrieval_actions": ["Attach Microsoft IR FY26 Q3 release", "Attach secondary transcript guidance context", "Attach secondary Q4 revenue guidance cross-check"],
+      "added_source_ids": ["microsoft_fy26_q3_press_release", "motley_msft_q3_fy2026_transcript", "marketbeat_msft_q3_2026_report"],
+      "reinforced_status": "Supported",
+      "evidence_class": "primary_company_and_secondary_guidance",
+      "rationale": "Latest company guidance is supported by primary issuer earnings context plus secondary transcript/report guidance details. Final reporting must preserve that the exact guidance table still prefers issuer-hosted transcript extraction.",
+      "residual_gaps": ["Automate issuer transcript extraction for future MSFT reruns."]
+    },
+    {
+      "task_id": "msft_forward_valuation_reconciliation",
+      "target_claim_contains": ["Forward valuation claim"],
+      "original_stage2_status": "Conditional",
+      "missing_evidence": ["Exact EPS input behind any baseline forward valuation point estimate", "Independent valuation range cross-check"],
+      "retrieval_actions": ["Attach StockAnalysis and MarketBeat forecast sources", "Run Stage 2C direct computable metric reconciliation"],
+      "added_source_ids": ["stockanalysis_msft_forecast", "marketbeat_msft_forecast", "marketbeat_msft_q3_2026_report"],
+      "reinforced_status": "Usable Range - Assumption-Based",
+      "evidence_class": "computable_metric_reconciliation",
+      "rationale": "Valuation is carried forward as an assumption-based range using secondary analyst forecast sources until exact EPS or multiple inputs are independently tied to source evidence.",
+      "residual_gaps": ["Exact source-backed EPS input behind any specific baseline valuation point estimate remains required."]
+    },
+    {
+      "task_id": "msft_sentiment_positioning_reinforcement",
+      "target_claim_contains": ["Sentiment and positioning data", "short interest"],
+      "original_stage2_status": "Supported",
+      "missing_evidence": ["Direct exchange or FINRA short-interest record"],
+      "retrieval_actions": ["Attach short-interest source and analyst-consensus sources"],
+      "added_source_ids": ["marketbeat_msft_short_interest", "stockanalysis_msft_forecast", "marketbeat_msft_forecast"],
+      "reinforced_status": "Supported",
+      "evidence_class": "secondary_positioning_and_consensus_data",
+      "rationale": "Positioning and analyst-consensus claims have numeric secondary support; squeeze/crowding conclusions must remain constrained without direct exchange/FINRA validation.",
+      "residual_gaps": ["Prefer direct exchange/FINRA short-interest data before high-conviction crowding or squeeze language."]
+    },
+    {
+      "task_id": "msft_macro_context_reinforcement",
+      "target_claim_contains": ["Macro/geopolitical claims"],
+      "original_stage2_status": "Supported",
+      "missing_evidence": [],
+      "retrieval_actions": ["Attach official policy source and source-dated sector context"],
+      "added_source_ids": ["fomc_april_2026_statement", "windowscentral_msft_q3_ai_capex"],
+      "reinforced_status": "Supported",
+      "evidence_class": "macro_and_sector_context",
+      "rationale": "Macro and sector context are supported as backdrop, not direct issuer validation.",
+      "residual_gaps": []
+    }
+  ]
+}
