@@ -327,7 +327,21 @@ The examples use:
 - Ticker: `MSFT`
 - Analysis date: `2026-05-03`
 - Provider: `deepseek`
-- Model: `deepseek-v4-flash`
+- Model profile: `flash` or `pro`
+
+DeepSeek V4 model switching:
+
+```text
+flash => deepseek-v4-flash
+pro   => deepseek-v4-pro
+```
+
+The official DeepSeek `/models` endpoint currently lists `deepseek-v4-flash`
+and `deepseek-v4-pro`. The baseline runner also accepts convenience aliases:
+`pro-max`, `deepseek-v4-pro-max`, and `deepseek-v4-promax` are normalized to
+the official DeepSeek model ID `deepseek-v4-pro`. `deepseek-chat` and
+`deepseek-reasoner` are treated as compatibility aliases for
+`deepseek-v4-flash`.
 
 ### Stage 0A: Resolve the Research Request
 
@@ -372,7 +386,19 @@ debate, trader, and portfolio-manager output. TITAN will validate it later.
 Command:
 
 ```powershell
-uv run python ..\scripts\run_tradingagents_baseline.py --ticker MSFT --trade-date 2026-05-03 --provider deepseek --model deepseek-v4-flash --out-dir ..\outputs\deepseek_fresh_baseline
+uv run python ..\scripts\run_tradingagents_baseline.py --ticker MSFT --trade-date 2026-05-03 --provider deepseek --model-profile flash --out-dir ..\outputs\deepseek_fresh_baseline
+```
+
+To use DeepSeek V4 Pro instead:
+
+```powershell
+uv run python ..\scripts\run_tradingagents_baseline.py --ticker MSFT --trade-date 2026-05-03 --provider deepseek --model-profile pro --out-dir ..\outputs\deepseek_fresh_baseline
+```
+
+Advanced users may also split quick and deep reasoning models:
+
+```powershell
+uv run python ..\scripts\run_tradingagents_baseline.py --ticker MSFT --trade-date 2026-05-03 --provider deepseek --quick-model flash --deep-model pro --out-dir ..\outputs\deepseek_fresh_baseline
 ```
 
 Outputs:

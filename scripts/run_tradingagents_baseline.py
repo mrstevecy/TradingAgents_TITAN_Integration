@@ -16,6 +16,7 @@ sys.path.insert(0, str(ROOT))
 
 from tradingagents.default_config import DEFAULT_CONFIG
 from tradingagents.graph.trading_graph import TradingAgentsGraph
+from titan_integration.deepseek_models import deepseek_model_note, normalize_deepseek_model
 from titan_integration.equity_evidence import run_equity_data_scan, save_evidence_store
 from titan_integration.error_learning import ErrorLearningStore
 
@@ -27,7 +28,20 @@ def main() -> int:
     parser.add_argument("--ticker", default="NVDA")
     parser.add_argument("--trade-date", default="2026-05-02")
     parser.add_argument("--provider", default="deepseek")
-    parser.add_argument("--model", default="deepseek-v4-flash")
+    parser.add_argument(
+        "--model-profile",
+        choices=["flash", "pro"],
+        help="DeepSeek convenience profile. flash => deepseek-v4-flash; pro => deepseek-v4-pro.",
+    )
+    parser.add_argument(
+        "--model",
+        help=(
+            "Model ID or alias applied to both quick and deep agents. "
+            "Examples: flash, pro, pro-max, deepseek-v4-flash, deepseek-v4-pro."
+        ),
+    )
+    parser.add_argument("--quick-model", help="Optional quick_think_llm override.")
+    parser.add_argument("--deep-model", help="Optional deep_think_llm override.")
     parser.add_argument(
         "--analysts",
         nargs="+",
@@ -43,6 +57,7 @@ def main() -> int:
         default=ROOT / "outputs" / "deepseek_fresh_baseline",
     )
     args = parser.parse_args()
+    quick_model, deep_model, model_selection_note = _resolve_model_selection(args)
 
     run_dir = args.out_dir
     logs_dir = run_dir / "runtime_logs"
@@ -67,8 +82,8 @@ def main() -> int:
             "data_cache_dir": str(cache_dir),
             "memory_log_path": str(memory_path),
             "llm_provider": args.provider,
-            "quick_think_llm": args.model,
-            "deep_think_llm": args.model,
+            "quick_think_llm": quick_model,
+            "deep_think_llm": deep_model,
             "backend_url": None,
             "max_debate_rounds": args.max_debate_rounds,
             "max_risk_discuss_rounds": args.max_risk_discuss_rounds,
@@ -78,6 +93,7 @@ def main() -> int:
             "mandatory_evidence_context_by_agent": role_contexts,
             "mandatory_evidence_store_path": str(evidence_path),
             "upstream_tool_evidence_path": str(tool_evidence_path),
+            "model_selection_note": model_selection_note,
         }
     )
 
@@ -120,6 +136,7 @@ def _build_summary(
         "provider": args.provider,
         "quick_think_llm": config["quick_think_llm"],
         "deep_think_llm": config["deep_think_llm"],
+        "model_selection_note": config.get("model_selection_note"),
         "selected_analysts": args.analysts,
         "processed_decision": processed_decision,
         "mandatory_equity_data_scan": mandatory_equity_data_scan,
@@ -162,6 +179,20 @@ def _build_role_error_contexts(store: ErrorLearningStore, ticker: str) -> dict[s
     return {role: store.prior_context_for_agent(ticker, role) for role in roles}
 
 
+def _resolve_model_selection(args: argparse.Namespace) -> tuple[str, str, str]:
+    if args.provider != "deepseek":
+        model = args.model or args.model_profile or "deepseek-v4-flash"
+        quick_model = args.quick_model or model
+        deep_model = args.deep_model or model
+        return quick_model, deep_model, "custom provider model selection"
+
+    base_alias = args.model or args.model_profile or "flash"
+    base_model = normalize_deepseek_model(base_alias)
+    quick_model = normalize_deepseek_model(args.quick_model) if args.quick_model else base_model
+    deep_model = normalize_deepseek_model(args.deep_model) if args.deep_model else base_model
+    return quick_model, deep_model, deepseek_model_note(base_alias, args.quick_model, args.deep_model)
+
+
 def _to_markdown(summary: dict[str, Any]) -> str:
     lines = [
         f"# TradingAgents Fresh Baseline: {summary['ticker']} {summary['trade_date']}",
@@ -169,6 +200,7 @@ def _to_markdown(summary: dict[str, Any]) -> str:
         f"- Provider: {summary['provider']}",
         f"- Quick model: {summary['quick_think_llm']}",
         f"- Deep model: {summary['deep_think_llm']}",
+        f"- Model selection: {summary.get('model_selection_note') or 'not specified'}",
         f"- Analysts: {', '.join(summary['selected_analysts'])}",
         f"- Processed decision: {summary['processed_decision']}",
         "",

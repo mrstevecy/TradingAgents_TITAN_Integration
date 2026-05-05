@@ -189,6 +189,23 @@ Important local settings:
 - `SEC_EDGAR_USER_AGENT` for SEC EDGAR requests.
 - Optional provider keys for future paid/enriched feeds.
 
+DeepSeek model switching is intentionally simple:
+
+```powershell
+# Fast/economical 1M-context preview model
+--provider deepseek --model-profile flash
+
+# Flagship/pro 1M-context preview model
+--provider deepseek --model-profile pro
+```
+
+The official DeepSeek `/models` endpoint currently lists `deepseek-v4-flash`
+and `deepseek-v4-pro`. Convenience aliases such as `flash`, `pro`, `pro-max`,
+and `deepseek-v4-pro-max` are normalized by
+`scripts\run_tradingagents_baseline.py` so operators do not need to memorize
+exact IDs. DeepSeek's compatibility names `deepseek-chat` and
+`deepseek-reasoner` are treated as V4 Flash aliases.
+
 Stooq note: Stooq does **not** provide an official documented public API with
 API keys. Any Stooq use should be treated as unofficial CSV/scraping-style
 fallback access, not an institutional primary source.
