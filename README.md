@@ -245,6 +245,17 @@ CSV files are optional. If supplied, they supplement TITAN addenda. If absent,
 the system retrieves comparable market and technical evidence from provider and
 public-source paths.
 
+For local development, private ticker files and generated research artifacts can
+also be archived outside the Git repository under:
+
+```text
+D:\Projects\CodeX\TradingAgents_Integration_Data\
+```
+
+That sibling folder is intentionally local-only. It is for user CSVs, generated
+PDFs, stage packets, graph outputs, provider caches, screenshots, and other
+materials that must not be published to GitHub.
+
 ## Output Locations
 
 Generated outputs are local-only and ignored by Git:

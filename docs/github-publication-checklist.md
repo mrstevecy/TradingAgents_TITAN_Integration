@@ -49,6 +49,17 @@ Do not publish:
 - generated Graphify outputs
 - Titan private corpora
 
+Local private/generated material should be kept outside the source repository
+when possible:
+
+```text
+D:\Projects\CodeX\TradingAgents_Integration_Data\
+```
+
+That folder is not part of the GitHub repository. It is the preferred archive
+for user CSVs, PDFs, generated reports, stage packets, graph outputs, provider
+caches, screenshots, and research-cycle bundles.
+
 ## Required Checks
 
 Run before any GitHub push:
