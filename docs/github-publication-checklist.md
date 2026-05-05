@@ -49,16 +49,19 @@ Do not publish:
 - generated Graphify outputs
 - Titan private corpora
 
-Local private/generated material should be kept outside the source repository
-when possible:
+For normal local development, these private/generated folders may remain inside
+`D:\Projects\CodeX\TradingAgents_Integration` because `.gitignore` excludes
+them. This keeps the workflow convenient while still protecting GitHub from
+private artifacts.
 
-```text
-D:\Projects\CodeX\TradingAgents_Integration_Data\
-```
+Use `git status --short --ignored` before pushing:
 
-That folder is not part of the GitHub repository. It is the preferred archive
-for user CSVs, PDFs, generated reports, stage packets, graph outputs, provider
-caches, screenshots, and research-cycle bundles.
+- `!!` means ignored and not pushed.
+- `??` means untracked and must be reviewed before pushing.
+- `A`, `M`, or `D` means staged/tracked changes and must be intentional.
+
+`D:\Projects\CodeX\TradingAgents_Integration_Data\` may be used as an optional
+backup/archive folder, but it is not required for ordinary development.
 
 ## Required Checks
 
